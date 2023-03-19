@@ -29,7 +29,7 @@ func main() {
 }
 
 func healthz(w http.ResponseWriter, r *http.Request) {
-	io.WriteString(w, "ok\n")
+	io.WriteString(w, "the server status :200\n")
 }
 
 func rootHandler(w http.ResponseWriter, r *http.Request) {
@@ -41,7 +41,7 @@ func rootHandler(w http.ResponseWriter, r *http.Request) {
 	} else {
 		io.WriteString(w, "this test is no params\n")
 	}
-	io.WriteString(w, "===================Details of the http request header:============\n")
+	io.WriteString(w, "===================Details of rescive http request header:============\n")
 	for k, v := range r.Header {
 		io.WriteString(w, fmt.Sprintf("%s=%s\n", k, v))
 
