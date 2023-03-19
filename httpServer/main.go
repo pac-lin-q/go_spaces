@@ -14,8 +14,6 @@ func main() {
 	flag.Set("v", "4")
 	glog.V(2).Info("Starting http server...")
 	http.HandleFunc("/", rootHandler)
-	//c, python, java := true, false, "no!"
-	//fmt.Println(c, python, java)
 	//res := http.ListenAndServe(":80", nil)
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", rootHandler)
